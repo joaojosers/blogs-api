@@ -7,18 +7,24 @@ const generateToken = (payload) => jwt.sign(payload, SECRET_KEY);
 
 const executeQueryDB = async (email, password) => {
   const user = await User.findOne({
-    where: { email, password },
-    attributes: { exclude: ['email', 'password'] },
+    where: { email },
+    attributes: { exclude: ['email'] },
   });
-  if (!user) return { status: 400, message: 'Invalid fields' };
+  if (!user) return { status: 400, data: { message: 'Invalid fields' } };
+  
+  if (user.dataValues.password !== password) {
+    return { 
+      status: 400, data: { message: 'Invalid fields' } }; 
+  }
 
   const { id } = user.dataValues;
 
-  const token = generateToken({ id, password });
+  const token = generateToken({ id });
 
-  return token;
-  
-  // return token;
+  return { 
+    status: 200, 
+    data: { token }, 
+  };
 };
 
 module.exports = {

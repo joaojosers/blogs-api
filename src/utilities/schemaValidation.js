@@ -10,10 +10,8 @@ const validateLoginFields = joi.object({
 }).messages({
   
   'any.required': 'Some required fields are missing',
-  // 'string.min': '"{{#key}}" length must be at least {{#limit}} characters long',
- 
+  'string.empty': 'Some required fields are missing',
 });
-
 const validateUser = joi.object({
   email: validateEmail,
   password: validatePassword,

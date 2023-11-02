@@ -2,7 +2,9 @@ const { validateLoginFields } = require('../utilities/schemaValidation');
 
 const fieldsValid = (req, res, next) => {
   const { body } = req;
+  console.log('teste body', body);
   const validationResult = validateLoginFields.validate(body);
+  console.log('teste fieldsValid', validationResult);
   console.log('teste fieldsValid', validationResult.error);
 
   if (validationResult.error) {

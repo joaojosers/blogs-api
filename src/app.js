@@ -2,7 +2,7 @@ const express = require('express');
 
 // ...
 const loginController = require('./controllers/loginController');
-const authMiddleware = require('./middlewares/authenticate.middleware');
+// const authMiddleware = require('./middlewares/authenticate.middleware');
 const { fieldsValid } = require('./middlewares/loginFields.middleware');
 
 const app = express();
