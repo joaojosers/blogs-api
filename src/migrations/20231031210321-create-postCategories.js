@@ -13,10 +13,6 @@ module.exports = {
           key: 'id'
         }
       },
-      // onUpdate: 'CASCADE',
-      // onDelete: 'CASCADE',
-      // primaryKey: true,
-      // type: Sequelize.INTEGER,
 
       categoryId: {
         type: Sequelize.INTEGER,
@@ -28,20 +24,6 @@ module.exports = {
           key: 'id'
         }
       },
-      // onUpdate: 'CASCADE',
-      // onDelete: 'CASCADE',
-      // primaryKey: true,
-      // type: Sequelize.INTEGER,
-
-      // outras colunas necessárias
-      // createdAt: {
-      //   allowNull: false,
-      //   type: Sequelize.DATE
-      // },
-      // updatedAt: {
-      //   allowNull: false,
-      //   type: Sequelize.DATE
-      // }
     });
   },
   down: async (queryInterface, Sequelize) => {
