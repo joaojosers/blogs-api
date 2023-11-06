@@ -15,24 +15,22 @@ const validateLoginFields = joi.object({
 });
 
 const displayNameValid = joi.string().required().min(8);
+const emailValid = joi.string().email({ tlds: { allow: false } });
+const imageValid = joi.string().uri();
 
-const validateDisplayName = joi.object({
+const validatePostUser = joi.object({
   displayName: displayNameValid,
+  email: emailValid,
+  password: validatePassword,
+  image: imageValid,
 }).messages({
   'string.min': '"displayName" length must be at least 8 characters long',
-});
-const emailValid = joi.string().email({ tlds: { allow: false } });
-
-const validateEmailType = joi.object({
-  email: emailValid,
-}).messages({
-  'string.email': '"email" must be a valid email',
+  'any.required': 'Some required fields are missing',
 });
 
 module.exports = {
   validateLoginFields,
-  validateDisplayName,
-  validateEmailType,
+  validatePostUser,
 };
 
 // email: Joi.string().email({ tlds: { allow: false } });

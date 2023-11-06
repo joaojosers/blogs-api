@@ -2,8 +2,10 @@ const express = require('express');
 
 // ...
 const loginController = require('./controllers/loginController');
+const userController = require('./controllers/userController');
 // const authMiddleware = require('./middlewares/authenticate.middleware');
 const { fieldsValid } = require('./middlewares/loginFields.middleware');
+// const { validatePostUser } = require('./utilities/schemaValidation');
 
 const app = express();
 app.use(express.json());
@@ -14,6 +16,7 @@ app.get('/', (_request, response) => {
 });
 
 app.post('/login', fieldsValid, loginController.execute);
+app.post('/user', userController.addNewUser);
 
 // ...
 

@@ -1,4 +1,5 @@
-const { validateLoginFields } = require('../utilities/schemaValidation');
+const { validateLoginFields, 
+  validatePostUser } = require('../utilities/schemaValidation');
 // const { authenticate } = require('./authenticate.middleware');
 
 const fieldsValid = (req, res, next) => {
@@ -9,16 +10,20 @@ const fieldsValid = (req, res, next) => {
     const errorMessage = error.details[0].message;
     return res.status(400).json({ message: errorMessage });
   }
-  // if (!error) {
-  //   return res.status(200).json({ token: authenticate(req, res, next) });
-  // }
-  
-  // return next();
   next();
 };
+function postUserValid(req, res, next) {
+  const { error } = validatePostUser.validate(req.body);
+  console.log('teste postUserValid', { error });
+  if (error) {
+    return res.status(400).json({ message: error.details[0].message });
+  }
+  next();
+}
 
 module.exports = { 
-  fieldsValid, 
+  fieldsValid,
+  postUserValid,
 };
 
 // const userValid = (req, res, next) => {
