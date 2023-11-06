@@ -1,3 +1,4 @@
+// const User = require('../models/User');
 const userService = require('../services/userService');
 
 const addNewUser = async (req, res) => {
@@ -7,38 +8,34 @@ const addNewUser = async (req, res) => {
   return res.status(status).json({ token });
 };
 
-module.exports = {
-  addNewUser,
+const getAllUsers = async (req, res) => {
+  const { status, data } = await userService.getAllUsers();
+  return res.status(status).json(data);
 };
 
-// const findAll = async (req, res) => {
-//   const { status, data } = await userService.findAll();
-//   // const users = await userService.findAll();
-    
-//   res.status(status).json(data);
-// };
-// const findById = async (req, res) => {
-//   const { id } = req.params;
-//   const { status, data } = await userService.findById(id);
-  
-//   return res.status(status).json(data);
-// }; 
-// const create = async (req, res) => {
-//   const { displayName, email, password, image } = req.body;
-//   const { status, data } = await userService.create(displayName, email, password, image);
-  
-//   return res.status(status).json(data);
-// };
-// const update = async (req, res) => {
+const getUserById = async (req, res) => {
+  const { id } = req.params;
+  const { status, data } = await userService.getUserById(id);
+  return res.status(status).json(data);
+};
+
+// const updateUser = async (req, res) => {
 //   const { id } = req.params;
 //   const { displayName, email, password, image } = req.body;
-//   const { status, data } = await userService.update(id, displayName, email, password, image);
-  
+//   const { status, data } = await userService.updateUser(id, displayName, email, password, image);
 //   return res.status(status).json(data);
 // };
-// const remove = async (req, res) => {
-//   const { id } = req.params;
-//   const { status, data } = await userService.remove(id);
-  
-//   return res.status(status).json(data);
-// };
+
+const deleteUser = async (req, res) => {
+  const { id } = req.params;
+  const { status, data } = await userService.deleteUser(id);
+  return res.status(status).json(data);
+};
+
+module.exports = {
+  addNewUser,
+  getAllUsers,
+  getUserById,
+  // updateUser,
+  deleteUser,
+};
