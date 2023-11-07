@@ -3,7 +3,7 @@ const { User } = require('../models');
 
 const SECRET_KEY = process.env.JWT_SECRET || 'secretJWT';
 
-const generateToken = (payload) => jwt.sign(payload, SECRET_KEY);
+const generateToken = (payload) => jwt.sign(payload, SECRET_KEY, { expiresIn: '10d' });
 
 const executeQueryDB = async (email, password) => {
   const user = await User.findOne({

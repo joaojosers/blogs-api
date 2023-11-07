@@ -70,9 +70,17 @@ const addNewUser = async (req, res) => {
   return res.status(201).json({ token });
 };
 
+// const getAllUsers = async (req, res) => {
+//   const { status, data } = await userService.getAllUsers();
+//   return res.status(status).json(data);
+// };
 const getAllUsers = async (req, res) => {
-  const { status, data } = await userService.getAllUsers();
-  return res.status(status).json(data);
+  try {
+    const users = await userService.getAllUsers();
+    return res.status(200).json(users);
+  } catch (error) {
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
 };
 
 const getUserByEmail = async (req, res) => {

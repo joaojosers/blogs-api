@@ -3,7 +3,7 @@ const express = require('express');
 // ...
 const loginController = require('./controllers/loginController');
 const userController = require('./controllers/userController');
-// const authMiddleware = require('./middlewares/authenticate.middleware');
+const authMiddleware = require('./middlewares/authenticate.middleware');
 const { fieldsValid } = require('./middlewares/loginFields.middleware');
 // const { validatePostUser } = require('./utilities/schemaValidation');
 
@@ -17,6 +17,7 @@ app.get('/', (_request, response) => {
 
 app.post('/login', fieldsValid, loginController.execute);
 app.post('/user', userController.addNewUser);
+app.get('/user', authMiddleware, userController.getAllUsers); // Adicione esta linha para o endpoint GET /user
 
 // ...
 
