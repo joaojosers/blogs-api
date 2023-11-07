@@ -88,10 +88,34 @@ const getUserByEmail = async (req, res) => {
   const { status, data } = await userService.getUserByEmail(email);
   return res.status(status).json(data);
 };
+// const getUserById = async (req, res) => {
+//   const { id } = req.params;
+//   const { status, data } = await userService.getUserById(id);
+//   return res.status(status).json(data);
+// };
+
 const getUserById = async (req, res) => {
   const { id } = req.params;
-  const { status, data } = await userService.getUserById(id);
-  return res.status(status).json(data);
+
+  try {
+    const user = await userService.getUserById(id);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User does not exist' });
+    }
+
+    const userData = {
+      id: user.id,
+      displayName: user.displayName,
+      email: user.email,
+      image: user.image,
+    };
+
+    return res.status(200).json(userData);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
 };
 
 const updateUser = async (req, res) => {

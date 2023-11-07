@@ -18,7 +18,7 @@ app.get('/', (_request, response) => {
 app.post('/login', fieldsValid, loginController.execute);
 app.post('/user', userController.addNewUser);
 app.get('/user', authMiddleware, userController.getAllUsers); // Adicione esta linha para o endpoint GET /user
-
+app.get('/user/:id', authMiddleware, userController.getUserById);
 // ...
 
 // É importante exportar a constante `app`,
