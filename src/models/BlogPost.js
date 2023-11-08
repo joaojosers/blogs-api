@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-  const BlogPost = sequelize.define('BlogPosts', {
+  const BlogPost = sequelize.define('BlogPost', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -22,14 +22,15 @@ module.exports = (sequelize, DataTypes) => {
     updated: {
         type: DataTypes.DATE,
     },
-    UserId: {
+    userId: {
         type: DataTypes.INTEGER,
         foreignKey: true,
         allowNull: false,
+        field: 'user_id',
     },
     
   }, {
-    tableName: 'BlogPosts',
+    tableName: 'blog_posts',
     underscored: true,
     timestamps: true,
     
