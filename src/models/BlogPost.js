@@ -18,9 +18,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     published: {
         type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
     },
     updated: {
         type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: false,
     },
     userId: {
         type: DataTypes.INTEGER,
@@ -32,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     tableName: 'blog_posts',
     underscored: true,
-    timestamps: true,
+    timestamps: false,
     
   });
 

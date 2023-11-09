@@ -18,7 +18,7 @@ const executeQueryDB = async (email, password) => {
   }
 
   const { id } = user.dataValues;
-
+  console.log('id', id);
   const token = generateToken({ id });
 
   return { 

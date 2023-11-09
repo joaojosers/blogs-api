@@ -28,9 +28,29 @@ const validatePostUser = joi.object({
   'any.required': 'Some required fields are missing',
 });
 
+const validateInputFields = joi.object({
+  title: joi.string().required(),
+  content: joi.string().required(),
+  categoryIds: joi.array().required(),
+}).messages({
+  'any.required': 'Some required fields are missing',
+  'string.empty': 'Some required fields are missing',
+  // 'string.title': '"title" is not allowed to be empty',
+  // 'string.content': '"content" is not allowed to be empty',
+  // 'array.categoryIds': '"categoryIds" is not allowed to be empty',
+});
+
+// const validatePostCategory = joi.object({
+//   name: joi.string().required(),
+// }).messages({
+//   'array.categoryIds': '"categoryIds" is not allowed to be empty',
+// });
+
 module.exports = {
   validateLoginFields,
   validatePostUser,
+  // validatePostCategory,
+  validateInputFields,
 };
 
 // email: Joi.string().email({ tlds: { allow: false } });
