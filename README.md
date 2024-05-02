@@ -19,7 +19,7 @@ Para rodar o back-end:
 
 cd api/ && npm start
 
-## Tecnologias usadas
+
 ## Executando Testes
 - npm test
 ## **Arquivos desenvolvidos pela Trybe**
