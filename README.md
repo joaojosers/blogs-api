@@ -19,9 +19,9 @@ npm install
 Executando aplicação
 Para rodar o back-end:
 
-cd api/ && npm start
+cd api/ && npm start ###
 
 ## **Executando Testes**
-- npm test
+- npm test ##
 ## **Arquivos desenvolvidos pela Trybe**
-- jestconfig.js, package-lock.json, package.json
+- jestconfig.js, package-lock.json, package.json ##
