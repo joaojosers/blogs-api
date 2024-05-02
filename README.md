@@ -1,37 +1,28 @@
-blogs-api
+# blogs-api
 
-Contexto
-
+## Contexto
 Este projeto trata-se de uma ferramenta de back-office para armazenar e buscar dados de blogs-api.
 
-Tecnologias usadas
+## Tecnologias usadas
+### Front-end:
+- Desenvolvido usando: React, Redux, CSS3, HTML5, Redis, ES6
 
-Front-end:
+### Back-end:
+- Desenvolvido usando: NodeJS, ExpressJS, MongoDB, MYSQL, ES6
 
-Desenvolvido usando: React, Redux, CSS3, HTML5, Redis, ES6
-
-Back-end:
-
-Desenvolvido usando: NodeJS, ExpressJS, MongoDB, MYSQL, ES6
-
-Instalando Dependências
-
-Backend
-
+## Instalando Dependências
+### Backend
+```bash
 cd api/ 
-
 npm install
 
 Executando aplicação
-
 Para rodar o back-end:
 
 cd api/ && npm start
 
-Executando Testes
-
+## Executando Testes
 - npm test
-
-Arquivos desenvolvidos pela Trybe
-
+## **Arquivos desenvolvidos pela Trybe**
 - jestconfig.js, package-lock.json, package.json
+![image](https://github.com/joaojosers/blogs-api/assets/20384590/f622b51f-970e-43ae-aff0-29bdb753c32a)
