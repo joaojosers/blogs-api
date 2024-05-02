@@ -9,20 +9,19 @@ Este projeto trata-se de uma ferramenta de back-office para armazenar e buscar d
 - Desenvolvido usando: NodeJS, ExpressJS, MongoDB, MYSQL, ES6
 
 ## Instalando Dependências
- ### Backend
+ - Backend
 ```bash
 cd api/ 
 npm install
-
-Executando aplicação
-Para rodar o back-end:
-
+```
+## Executando aplicação
+* Para rodar o back-end:
+```
 cd api/ && npm start
-...
+```
 
 ## Executando Testes
 - npm test
-...
-## **Arquivos desenvolvidos pela Trybe**
+## Arquivos desenvolvidos pela Trybe**
 - jestconfig.js, package-lock.json, package.json
-...
+
