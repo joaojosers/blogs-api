@@ -16,6 +16,16 @@ Este projeto trata-se de uma ferramenta de back-office para armazenar e buscar d
 cd api/ 
 npm install
 
+Frontend
+bash
+Copy code
+cd src/
+npm install
+Executando aplicação
+Para rodar o back-end:
+bash
+Copy code
+cd api/ && npm start
 ## Executando aplicação
 - Para rodar o back-end:
 cd api/ && npm start
