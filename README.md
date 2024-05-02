@@ -25,4 +25,4 @@ cd api/ && npm start
 - npm test
 ## **Arquivos desenvolvidos pela Trybe**
 - jestconfig.js, package-lock.json, package.json
-![image](https://github.com/joaojosers/blogs-api/assets/20384590/f622b51f-970e-43ae-aff0-29bdb753c32a)
+
