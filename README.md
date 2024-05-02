@@ -18,10 +18,11 @@ Executando aplicação
 Para rodar o back-end:
 
 cd api/ && npm start
-
+...
 
 ## Executando Testes
 - npm test
+...
 ## **Arquivos desenvolvidos pela Trybe**
 - jestconfig.js, package-lock.json, package.json
-
+...
