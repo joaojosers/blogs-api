@@ -14,11 +14,12 @@ Este projeto trata-se de uma ferramenta de back-office para armazenar e buscar d
 cd api/ 
 npm install
 
- ### Executando aplicação
+Executando aplicação
 Para rodar o back-end:
 
 cd api/ && npm start
 
+## Tecnologias usadas
 ## Executando Testes
 - npm test
 ## **Arquivos desenvolvidos pela Trybe**
